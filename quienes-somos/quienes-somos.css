@@ -1,0 +1,515 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+      overflow-x: hidden;
+}
+
+
+.header {
+  position: fixed;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+  0% {
+      opacity: 0;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Estilos para el icono de menú */
+.floating-icon {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #d1d1d1;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* Estilos para el fondo con opacidad */
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(48, 48, 48, 0.966); /* Fondo con opacidad */
+  z-index: 70; /* Coloca el fondo por encima de todo */
+}
+
+/* Estilos para las pestañas */
+.tabs {
+  display: none;
+  position: fixed;
+  top: 95px;
+  right: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-size: 2em;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.tabs li {
+  display: block;
+  margin-bottom: 15px; /* controla la distancia de los textos */
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+}
+
+/* Estilo para las líneas suaves */
+.tabs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #0cbdbd; /* Color de linea decorativa */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Efecto de transición suave */
+}
+
+/* Efecto al pasar el cursor */
+.tabs a:hover::after {
+  transform: scaleX(1);
+}
+
+.tab-active {
+  color: #6d0303;
+}
+
+/* Mostrar el fondo y el menú de servicios al hacer clic */
+.modal-open .modal-background,
+.modal-open .tabs {
+  display: block;
+}
+
+/*<!-- sección quines somos --> */
+.quienes-somos {
+  position: static;
+  overflow: hidden;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+  0% {
+      opacity: 0;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.quienes-somos img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  animation: fadeInZoom 2s ease-in-out;
+}
+
+/* Adaptabilidad tablet */
+@media screen and (max-width: 1024px) {
+  .quienes-somos img {
+      animation: fadeInZoom 2s ease-in-out;
+  }
+}
+
+/* Adaptabilidad móvil */
+@media screen and (max-width: 768px) {
+  .quienes-somos img {
+      animation: fadeInZoom 2s ease-in-out;
+  }
+}
+.floating-menu {
+  position: absolute; /* Permanece en su posición dentro del contenedor */
+  top: 20px; /* A 20px desde la parte superior */
+  right: 100px; /* A 100px desde la parte derecha */
+  background-color: transparent; /* Color de fondo */
+  padding: 10px; /* Espaciado interno */
+  z-index: 2; /* Asegura que esté encima de otros elementos */
+}
+
+.menu-item {
+  background-color: #04f7eba8;
+  color: rgb(252, 252, 252);
+  padding: 10px 22px; /* Ajusta el padding según sea necesario */
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.menu-item:hover {
+  background-color: #1f1cdb;
+}
+
+
+/* Estilos para el contenedor general */
+
+/* parrafos, vision etc*/
+.content-container {
+  position: static;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 25, 248, 0.897);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+}
+
+.content {
+  background-color: rgba(87, 7, 7, 0);
+  padding: 20px;
+  max-width: 500px;
+  text-align: center;
+  display: none;
+  shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  float: left;
+  clear: both;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-left: 20px; /* Ajusta el margen izquierdo para dar espacio al texto flotante */
+}
+/*Titulo, visión etc */
+.content h2 {
+  margin-top: 0;
+  color: #07eaf1d3;
+  font-size: 1.5em;
+  text-align: center;
+}
+.content.active {
+  display: block;
+}
+
+.content-container.active {
+  display: flex;
+}
+/* Estilos para los párrafos */
+.content p {
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1em;
+  text-align: justify;
+}
+
+/* Ajustes responsivos */
+@media (min-width: 768px) {
+  .content {
+    width: 60%;
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    width: 50%;
+    max-width: 800px;
+  }
+}
+
+/* FECTO GRAFICOS */
+.icon-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.icon {
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.icon i {
+  font-size: 2rem;
+  color: #00ffff;
+}
+
+.icon p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.icon-stats .icon {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.icon-stats .icon:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.icon-stats .icon:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.icon-stats .icon:nth-child(3) {
+  animation-delay: 1.5s;
+}
+/*  <!-- Sección 3. contenido - Servicios -->*/
+.texto-servicio {
+  background-color: #ffffff;
+  padding: 40px 10px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto-servicio h7 {
+  font-size: 2rem;
+  color: #1f1f1f;
+  margin-bottom: 15px;
+}
+
+.texto-servicio p {
+  font-size: 1rem;
+  color: #757575;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/*  <!-- Sección 3.1 Iconos de Servicios --> */
+.icon-stats {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 50px 0; /* Elimina el padding lateral */
+  margin: 0; /* Elimina los márgenes */
+  width: 100%; /* Asegura que ocupe el 100% del ancho */
+  box-sizing: border-box; /* Considera el padding dentro del ancho total */
+  gap: 15%;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+
+.icon-stats .icon {
+  text-align: center;
+  color: #747474;
+}
+
+.icon-stats .icon a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-stats .icon i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-stats .icon p {
+  font-size: 18px;
+}
+
+.icon-stats .icon:hover i {
+  transform: scale(1.2);
+}
+
+/* Configuración de íconos específicos */
+.icon-stats .fa-search {
+  color: #747474;
+}
+
+.icon-stats .fa-ad {
+  color: #747474;
+}
+
+.icon-stats .fa-users {
+  color: #747474;
+}
+
+.icon-stats .fa-paint-brush {
+  color: #747474;
+}
+
+.icon-stats .fa-code {
+  color: #747474;
+}
+
+/* Animación de entrada de los iconos */
+@keyframes fadeInIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .icon-stats {
+    flex-direction: column; /* Una columna en dispositivos pequeños */
+    gap: 20px;
+  }
+
+  .icon-stats .icon {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* <!-- Sección 3.2 contacto --> */
+.contacto {
+  background-color: #121616;
+  color: rgb(172, 172, 172);
+  padding: 40px 0;
+}
+
+.contacto-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.columna {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.columna h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.columna p {
+  margin: 5px 0;
+}
+
+.redes-sociales a {
+  color: #0ff8f8;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.redes-sociales a:hover {
+  color: #f5d104;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .contacto-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .columna {
+    margin: 15px 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .contacto-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .columna {
+    flex: 1 1 45%; /* Dos columnas por fila */
+    text-align: left;
+  }
+
+  .redes-sociales {
+    flex: 1 1 100%; /* Una columna completa para las redes sociales */
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .contacto-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .columna {
+    flex: 1 1 22%; /* Cuatro columnas en una fila */
+  }
+
+  .redes-sociales {
+    text-align: left;
+  }
+}
+
+
+/*   <!-- 4. Sección de AR --> */
+#ar-container {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#ar-container a {
+  color: #f5d104;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#ar-container a:hover {
+  text-decoration: underline;
+}

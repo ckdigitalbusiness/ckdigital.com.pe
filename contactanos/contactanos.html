@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Marketing Empresarial - CK Digital</title>
+    <link rel="stylesheet" href="contactanos.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+
+    <!-- Meta Descriptions -->
+    <meta name="description" content="CK Digital ofrece servicios de marketing, creación de logos, desarrollo de contenido, estrategias SEO y SEM, y creación de páginas web. Contacta con nosotros para más información.">
+</head>
+<body>
+  <!-- sección 1 - encabezado pagina web-->
+  <!-- sección 1.2 contenedor de particulas-->
+  <div id="particles-js"></div>
+  <!-- sección 1.3 Overlay -->
+  <div class="overlay">
+    <!-- sección 1.4 glass container -->
+    <div class="glass-container">
+      <!-- sección 1.5 formulario -->
+      <div class="form-container">
+        <form action="/submit" method="POST">
+          <div id="mensaje" class="oculto">
+            <h1>Formulario recibido</h1>
+          </div>
+          <div class="form-header">
+            <div class="logo-formulario">
+              <img src="formulario" alt="">
+            </div>
+            <h2>Envíanos un mensaje</h2>
+          </div>
+          <div class="form-body">
+            <div class="form-group">
+              <input type="text" id="Nombres" name="Nombre" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="Empresa" name="Empresa" placeholder="Empresa" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="correo" name="Correo" placeholder="Correo" required>
+            </div>
+            <div class="form-group">
+              <div class="codigo-area-panel">
+                <input type="text" id="codigoPais" placeholder="Código de país" readonly>
+                <ul class="lista-paises">
+                  <li data-codigo-area="+54">Argentina (+54)</li>
+                  <li data-codigo-area="+591">Bolivia (+591)</li>
+                  <li data-codigo-area="+55">Brasil (+55)</li>
+                  <li data-codigo-area="+56">Chile (+56)</li>
+                  <li data-codigo-area="+57">Colombia (+57)</li>
+                  <li data-codigo-area="+593">Ecuador (+593)</li>
+                  <li data-codigo-area="+51">Perú (+51)</li>
+                  <li data-codigo-area="+595">Paraguay (+595)</li>
+                  <li data-codigo-area="+598">Uruguay (+598)</li>
+                  <li data-codigo-area="+58">Venezuela (+58)</li>
+                  <!-- Puedes agregar más países aquí -->
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="Telefono" name="Teléfono" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+              <textarea id="Mensaje" name="Mensaje" placeholder="Mensaje" required></textarea>
+            </div>
+            <div class="form-group">
+              <select id="Servicio" name="Servicio" required>
+                <option value="" selected disabled>Selecciona un servicio</option>
+                <option value="Creación de página web">Creación de página web</option>
+                <option value="Creación de Logo">Creación de Logo</option>
+                <option value="Configuración de redes sociales">Configuración de redes sociales</option>
+                <option value="Configuración de Google Business">Configuración de Google Business</option>
+                <option value="Creación de contenidos para Redes Sociales">Creación de contenidos para Redes Sociales</option>
+                <option value="Estrategias SEM">Estrategias SEM</option>
+                <option value="Posicionamiento SEO">Posicionamiento SEO</option>
+                <option value="Brochure Corporativo">Brochure Corporativo</option>
+                <option value="Tarjeta Corporativa">Tarjeta Corporativa</option>
+                <option value="Edición de videos">Edición de videos</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- sección 2: Icono de menú de hamburguesas -->
+<div id="floating-icon" class="floating-icon" aria-label="Menú de navegación">☰</div>
+<!-- Fondo con opacidad -->
+<div class="modal-background" id="modal-background"></div>
+
+<!-- Menú de pestañas de servicios -->
+<nav class="tabs" id="tabs" aria-label="Menú de pestañas de servicios">
+    <ul>
+        <li><a href="/" class="tab-link" data-tab="inicio">Inicio</a></li>
+        <li><a href="/servicios" class="tab-link" data-tab="servicios">Servicios</a></li>
+        <li><a href="/quienes-somos" class="tab-link" data-tab="quienes-somos">Quiénes somos</a></li>
+        <li><a href="/contactanos" class="tab-link" data-tab="contactanos">Contáctanos</a></li>
+    </ul>
+</nav>
+
+<!-- Contenedor para el contenido dinámico -->
+<div id="tab-content" class="tab-content">
+    <!-- Contenido inicial puede estar aquí -->
+</div>
+  
+  <script src="contactanos.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de marketing empresarial - ckdigitai</title>
+    <link rel="stylesheet" href="servicios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1.Icono de menú de hamburguesas -->
+    <div id="floating-icon" class="floating-icon" aria-label="Menú de navegación">☰</div>
+    <!-- 1.2 Fondo con opacidad -->
+    <div class="modal-background" id="modal-background"></div>
+
+    <!-- 1.3 Menú de pestañas de servicios -->
+    <nav class="tabs" id="tabs" aria-label="Menú de pestañas de servicios">
+        <ul>
+            <!-- Elemento del menú: Inicio -->
+            <li><a href="/" class="tab-link" data-tab="inicio">Inicio</a></li>
+            <!-- Elemento del menú: Servicios -->
+            <li><a href="/servicios" class="tab-link" data-tab="servicios">Servicios</a></li>
+            <!-- Elemento del menú: Quiénes somos -->
+            <li><a href="/quienes-somos" class="tab-link" data-tab="quienes-somos">Quiénes somos</a></li>
+            <!-- Elemento del menú: Contáctanos -->
+            <li><a href="/contactanos" class="tab-link" data-tab="contactanos">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1.4 Contenedor para el contenido dinámico -->
+    <div id="tab-content" class="tab-content">
+    </div>
+
+    <!-- 2. imagen de servicios -->
+    <div class="servicios">
+        <picture>
+            <source srcset="imagenes/1-mobile.jpg" media="(max-width: 799px)">
+            <source srcset="imagenes/1.jpg" media="(min-width: 800px)">
+            <img src="imagenes/1.jpg" alt="creacion de logo" class="servicios-carousel-img">
+        </picture>
+    </div>
+<!-- 2. Banner parte superior -->
+<div class="banner">
+</div>
+
+    <!-- Sección 3. contenido servicios -->
+    <div class="texto-servicio">
+        <h7>Nuestros Servicios</h7>
+        <p>Estamos enfocados en brindar servicios de  marketing digital integrados, que permitan ayudarte a alcanzar tus objetivos comerciales.</p>
+        </div>
+    <!-- Sección 4. Iconos de Servicios -->
+    <div class="icon-stats">
+        <div class="icon">
+            <a href="/servicios/crear-pagina-web">
+                <i class="fas fa-code"></i>
+                <p>Crear página web</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/crear-logotipo">
+                <i class="fas fa-paint-brush"></i>
+                <p>Crear logotipo</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/social-media-manager">
+                <i class="fas fa-users"></i>
+                <p>Social media manager</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/seo">
+                <i class="fas fa-search"></i>
+                <p>SEO</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/sem">
+                <i class="fas fa-ad"></i>
+                <p>SEM</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="servicios.js"></script>
+</body>
+</html>
+
+
+
