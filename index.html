@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CK Digital ofrece servicios de marketing digital y estrategias online para mejorar la presencia de tu negocio en internet.">
+    <title>CK Digital - Marketing Digital y Estrategias Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+      <!-- Etiqueta que funciona mejor las jquery -  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+ 
+ <!-- 1 Imágenes con efecto carrusel -->
+<!-- Sección de imágenes con efecto parallax -->
+<div class="pagina">
+    <div class="parallax">
+        <picture>
+            <!-- Imagen para pantallas pequeñas (móviles) -->
+            <source srcset="images/2-mobile.svg" media="(max-width: 799px)">
+            <source srcset="images/2.svg"  media="(max-width: 799px)">
+        </picture>
+    </div>
+</div>
+     <style>
+         @media screen and (min-width: 800px) {
+             .modal-content {
+                 max-width: 60%;
+             }
+            }
+</style>
+<!-- 1.5 Sección publicidad... -->
+ <!-- Sección de Estadísticas de Marketing Digital -->
+<header class="publicidad">
+<div class="stats-container">
+    <h5>Impacto de Nuestros Servicios de Marketing Digital</h5>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="stat-info">
+                <div class="counter" data-target="70">
+                    <div class="counter-number">0%</div>
+                </div>
+                <p>Aumento en Visibilidad Online</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+                <div class="counter" data-target="60">
+                    <div class="counter-number">0%</div>
+                </div>
+                <p>Incremento en Generación de Leads</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="stat-info">
+                <div class="counter" data-target="80">
+                    <div class="counter-number">0%</div>
+                </div>
+                <p>Mejora en la Tasa de Conversión</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="stat-info">
+                <div class="counter" data-target="75">
+                    <div class="counter-number">0%</div>
+                </div>
+                <p>Aumento en la Fidelización de Clientes</p>
+            </div>
+        </div>
+    </div>
+    <p class="stats-source">Fuente: <a href="https://www.example.com/stats" target="_blank" rel="noopener noreferrer">Estudios de Marketing Digital</a></p>
+</div>
+<h7>Servicios de Marketing Digital</h7>
+<p>Estamos enfocados en brindar servicios de  marketing digital integrados que permitan ayudarte a alcanzar tus objetivos comerciales.</p>
+</header> 
+<!-- 2. Banner parte superior -->
+<div class="banner">
+</div>
+<!-- 4.Logo parte superior -->
+  <header class="logo-header">
+    <div class="logo-container">
+        <img src="logo/2.svg" alt="logo ck digital" class="logo">
+    </div>
+    </header>
+</div>
+<!-- 7. Pestañas parte superior -->
+<!-- Icono de menú de hamburguesas -->
+<div id="floating-icon" class="floating-icon">☰</div>
+<!-- Fondo con opacidad -->
+<div class="modal-background" id="modal-background"></div>
+
+<!-- Menú de pestañas de servicios -->
+<nav class="tabs" id="tabs">
+    <ul>
+        <li><a href="/" class="tab-link" data-tab="inicio">Inicio</a></li>
+        <li><a href="/servicios" class="tab-link" data-tab="servicios">Servicios</a></li>
+        <li><a href="/quienes_somos" class="tab-link" data-tab="quienes_somos">Quienes somos</a></li>
+        <li><a href="/contactanos" class="tab-link" data-tab="contactanos">Contáctanos</a></li>
+    </ul>
+</nav>
+
+<!-- Contenedor para el contenido dinámico -->
+<div id="tab-content" class="tab-content">
+    <!-- Contenido inicial puede estar aquí -->
+</div>
+<!-- 8. Formulario -->
+    <!-- Mensaje de confirmación -->
+    <form action="/formulario" method="POST">
+        <div id="mensaje" class="oculto">
+            <h1>Formulario recibido</h1>z
+          </div>
+        <!-- Enlace que al hacer clic muestra el banner -->
+        <!-- 8.1 Texto flotante -->
+        <div class="floating-text" id="floating-text">Escríbenos</div>
+
+        <!-- 8.2 Banner formulario -->
+        <div class="formulario" id="formulario">
+            <!-- 8.3 Logotipo específico para el formulario -->
+            <div class="logo-formulario">
+                <img src="logo/2.svg" alt="Logo para el formulario">
+            </div>
+            <!-- 8.4 Texto "Envíanos un mensaje" dentro del formulario --> 
+            <h2>Envíanos un mensaje</h2>
+            <!-- Banner del formulario oculto inicialmente -->
+            <div class="panel">
+                <!-- Banner del formulario "nombre" -->      
+                <div class="form-group nombre-group">
+                    <input type="text" id="Nombres" name="Nombre" placeholder="Nombre" required>
+                </div>
+                <!-- Banner del formulario "Empresa" -->      
+                <div class="form-group nombre-group">
+                    <input type="text" id="Empresa" name="Empresa" placeholder="Empresa" required>
+                </div>
+                <!-- Banner del formulario "Correo" -->   
+                <div class="form-group correo-group">
+                    <input type="email" id="correo" name="Correo" placeholder="Correo" required>
+                </div>
+                <!-- 8.5 Banner del formulario "Telefono" -->   
+                <div class="form-group telefono-group">
+                    <input type="tel" id="Telefono" name="Teléfono" placeholder="Teléfono" required>
+                </div>  
+
+                <!-- 8.6 Estilos Código area-pais -->
+                <div class="codigo-area-panel">
+                    <input type="text" id="codigoPais" placeholder="Código de país" readonly>
+                    <ul class="lista-paises" style="display: none;">
+                        <!-- 8.7 Lista paises codigo-area -->
+                        <li data-codigo="AR" data-codigo-area="+54"><span class="country-abbr">AR</span> (+54) </li>
+                        <li data-codigo="BO" data-codigo-area="+591"><span class="country-abbr">BO</span> (+591)</li>
+                        <li data-codigo="BR" data-codigo-area="+55"><span class="country-abbr">BR</span> (+55) </li>
+                        <li data-codigo="CL" data-codigo-area="+56"><span class="country-abbr">CL</span> (+56) </li>
+                        <li data-codigo="CO" data-codigo-area="+57"><span class="country-abbr">CO</span> (+57) </li>
+                        <li data-codigo="EC" data-codigo-area="+593"><span class="country-abbr">EC</span> (+593)</li>
+                        <li data-codigo="PE" data-codigo-area="+51"><span class="country-abbr">PE</span> (+51) </li>
+                        <li data-codigo="PY" data-codigo-area="+595"><span class="country-abbr">PY</span> (+595)</li>
+                        <li data-codigo="UY" data-codigo-area="+598"><span class="country-abbr">UY</span> (+598)</li>
+                        <li data-codigo="VE" data-codigo-area="+58"><span class="country-abbr">VE</span> (+58) </li>     
+                    </ul>
+                </div>
+                <!-- 8.8 Casillero "mensaje, usar textarea" -->  
+                <div class="form-group Mensaje-group">
+                    <textarea id="Mensaje" name="Mensaje" placeholder="Mensaje" required></textarea>
+                </div>
+
+                <!-- 8.9 Lista servicios -->
+                <div class="servicio-de-interes">
+                    <select id="Servicio" name="Servicio" required="">
+                        <option value="" selected disabled>Selecciona un servicio</option>
+                        <option value="Creación de página web">Creación de página web</option>
+                        <option value="Creación de Logo">Creación de Logo</option>
+                        <option value="Configuración de redes sociales">Configuración de redes sociales</option>
+                        <option value="Configuración de Google Business">Configuración de Google Business</option>
+                        <option value="Creación de contenidos para Redes Sociales">Creación de contenidos para Redes Sociales</option>
+                        <option value="Estrategias SEM">Estrategias SEM</option>
+                        <option value="Posicionamiento SEO">Posicionamiento SEO</option>
+                        <option value="Brochure Corporativo">Brochure Corporativo</option>
+                        <option value="Tarjeta Corporativa">Tarjeta Corporativa</option>
+                        <option value=">Edición de videos">Edición de videos</option>
+                    </select>
+                </div>
+                <!-- 8.9.1 Botón de enviar -->
+                <button type="submit">Enviar</button>   
+            </div>
+        </div>
+    </form>
+ 
+    
+<!--9. Chatbot -->
+<!-- Aquí otros elementos de tu página, como imágenes, banners, formularios, etc. -->
+<div id="chatbot-container">
+    <div id="chatbot-header">
+        <img src="Bot/1.svg" alt="Bot Virtual" id="virtual-bot">
+        <span id="close-chatbot-btn">×</span>
+    </div>
+    <div id="chatbox" class="chat-box">
+        <!-- Aquí se mostrarán los mensajes del chat -->
+    </div>
+    <textarea id="user-input" placeholder="Escribe tu mensaje..."></textarea>
+    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+    <div id="livechat-option">
+        <button id="open-livechat-btn">Chatea en Vivo</button>
+    </div>
+</div>
+
+<div id="banner" onclick="openChatbot()">Chatea con nosotros</div>
+       <!-- Sección 3. Iconos de Servicios -->
+       <div class="icon-stats">
+        <div class="icon">
+            <a href="/servicios/crear-pagina-web">
+                <i class="fas fa-code"></i>
+                <p>Crear página web</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/crear-logotipo">
+                <i class="fas fa-paint-brush"></i>
+                <p>Crear logotipo</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/social-media-manager">
+                <i class="fas fa-users"></i>
+                <p>Social media manager</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/seo">
+                <i class="fas fa-search"></i>
+                <p>Estrategias SEO</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="/servicios/sem">
+                <i class="fas fa-ad"></i>
+                <p>Estrategias SEM</p>
+            </a>
+        </div>
+    </div>
+
+<!-- Sección de contacto -->
+<footer class="contacto">
+    <div class="contacto-container">
+      <!-- Columna 1: Logo y Derechos Reservados -->
+      <div class="columna">
+        <p>&copy; 2024 CK Digital</p>
+            <p>|Todos los derechos reservado|</p>
+      </div>
+      <!-- Columna 2: Dirección -->
+      <div class="columna">
+        <h4>Dirección</h4>
+        <p>Calle las limas 410 - Independencia, 410</p>
+        <p>Lima, Perú</p>
+      </div>
+  
+      <!-- Columna 3: Teléfono y Email -->
+      <div class="columna">
+        <h4>Contacto</h4>
+        <p>Teléfono: +51 933 838 792</p>
+        <p>Email: ckdigital@outlook.com.pe</p>
+      </div>
+  
+      <!-- Columna 4: Íconos de Redes Sociales -->
+      <div class="columna redes-sociales">
+        <h4>Síguenos</h4>
+        <a href="https://facebook.com/tuempresa" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/tuempresa" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/tuempresa" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/tuempresa" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+<!-- modificar la ruta puede afectar el envio de mensajes y cerrar el chatbot-->
+    <script src="/node_modules/socket.io/client-dist/socket.io.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
+    
+        
+    
+    
+    

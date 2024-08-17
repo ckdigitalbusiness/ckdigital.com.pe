@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Marketing Empresarial - CK Digital</title>
+    <link rel="stylesheet" href="crear-logotipo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Meta Descriptions -->
+    <meta name="description" content="CK Digital ofrece servicios de marketing, creación de logos, desarrollo de contenido, estrategias SEO y SEM, y creación de páginas web. Contacta con nosotros para más información.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CK Digital - Servicios de Marketing y Creación de Página Web">
+    <meta property="og:description" content="CK Digital ofrece servicios de marketing, creación de logos, desarrollo de contenido, estrategias SEO y SEM, y creación de páginas web.">
+    <meta property="og:image" content="URL_de_tu_imagen_destacada.jpg">
+    <meta property="og:url" content="URL_de_tu_pagina_web">
+    <meta property="og:type" content="website">
+</head>
+<body>
+<!-- sección 1 - encabezado pagina web-->
+ <!-- sección 1.2 contenedor de particulas-->
+    <div id="particles-js"></div>
+       <!-- Contenido de la página web -->
+<!-- sección 1.3 Contenedor principal con parallax -->
+    <div class="pagina parallax">
+     <picture class="responsive-img">
+            <source srcset="logoimg/1-mobile.jpg" media="(max-width: 799px)">
+            <img src="logoimg/1.jpg" alt="creamos tu pagina web" class="servicios-carousel-img">
+        </picture>
+        <!-- sección 1.4 Overlay -->
+        <div class="overlay">
+            <!-- sección 1.5 Título encabezado -->
+            <div class="title">Diseñamos tu Identidad Visual <span class="highlight highlight-color"> "Logotipo"</span></div>
+        </div>
+    </div>    
+<!-- 1.4. Pestañas parte superior -->
+<!-- Icono de menú de hamburguesas -->
+<div id="floating-icon" class="floating-icon">☰</div>
+<!-- Fondo con opacidad -->
+<div class="modal-background" id="modal-background"></div>
+
+<!-- Menú de pestañas de servicios -->
+<nav class="tabs" id="tabs">
+    <ul>
+        <li><a href="/" class="tab-link" data-tab="inicio">Inicio</a></li>
+    </ul>
+</nav>
+
+<!-- Contenedor para el contenido dinámico -->
+<div id="tab-content" class="tab-content">
+    <!-- Contenido inicial puede estar aquí -->
+</div>
+<!-- Bloque 1: Secciones 2.1, 2.2, 2.3 y 2.4 -->
+<div class="beneficios-logo">
+    <div class="text-titulo">
+        <h2>Especialistas en Creación de Logotipos</h2>
+    </div>        
+    <p>Nos enfocamos en diseñar logotipos que sean la representación visual perfecta de tu marca. Somos especialistas en creación de identidades visuales en Lima, donde cada diseño es hecho a medida y equilibra creatividad con efectividad. Nuestro enfoque se basa en una planificación meticulosa y objetivos claros, asegurando que tu logotipo comunique eficazmente la esencia de tu marca.</p>
+    <h3>Beneficios de Tener un Logotipo como Identidad de Marca</h3>
+</div>
+
+    <div class="main-container">
+        <!-- Sección 2.1: Identidad de Marca -->
+        <section class="feature identity">
+            <div class="feature-content">
+                <div class="text-icon">
+                    <div class="text-left">
+                        <h2>Identidad de Marca</h2>
+                        <p>Un estudio de <span class="highlight">Siegel+Gale</span> encontró que el <span class="highlight">60% de los consumidores</span> son más propensos a recomendar una marca que reconocen fácilmente.</p>
+                    </div>
+                    <div class="icon-right">
+                        <canvas id="identityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 2.2: Primera Impresión -->
+        <section class="feature impression">
+            <div class="feature-content">
+                <div class="text-icon">
+                    <div class="text-left">
+                        <h2>Primera Impresión</h2>
+                        <p>Según <span class="highlight">ResearchGate,</span> el <span class="highlight">94% de los consumidores</span> dicen que la primera impresión de una marca está relacionada con el diseño visual, incluidos logotipos.</p>
+                    </div>
+                    <div class="icon-right">
+                        <canvas id="impressionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 2.3: Profesionalismo -->
+        <section class="feature professionalism">
+            <div class="feature-content">
+                <div class="text-icon">
+                    <div class="text-left">
+                        <h2>Profesionalismo</h2>
+                        <p>De acuerdo con un informe de <span class="highlight">Fit Small Business,</span> el <span class="highlight">75% de los consumidores</span> creen que el diseño de un logotipo puede reflejar la calidad de un producto o servicio.</p>
+                    </div>
+                    <div class="icon-right">
+                        <canvas id="professionalismChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 2.4: Diferenciación -->
+        <section class="feature differentiation">
+            <div class="feature-content">
+                <div class="text-icon">
+                    <div class="text-left">
+                        <h2>Diferenciación</h2>
+                        <p>Un análisis de <span class="highlight">Crowdspring</span> revela que el <span class="highlight">78% de los consumidores</span> recuerdan un logotipo bien diseñado.</p>
+                    </div>
+                    <div class="icon-right">
+                        <canvas id="differentiationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+<!-- bloque 2. Carrusel de Imágenes -->
+<div class="carousel-container">
+    <h3>Nuestros trabajos</h3>
+    <div class="image-carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/1.jpg" alt="Imagen 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/2.jpg" alt="Imagen 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/3.jpg" alt="Imagen 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/4.jpg" alt="Imagen 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/5.jpg" alt="Imagen 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/6.jpg" alt="Imagen 6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="logoimg/carruselimg/7.jpg" alt="Imagen 7">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- bloqueSecciones 2.5, 2.6, 2.7: Organización en columnas -->
+<div class="main-container">
+    <!-- Sección 2.5: Consistencia -->
+    <section class="feature consistency">
+        <div class="feature-content">
+            <div class="text-icon">
+                <div class="text-left">
+                    <h2>Consistencia</h2>
+                    <p>Según <span class="highlight">Lucidpress,</span> las marcas que son consistentes con su identidad visual (incluyendo logotipos) <span class="highlight">experimentan un aumento del 23% en ingresos en promedio.</span></p>
+                </div>
+                <div class="icon-right">
+                    <canvas id="consistencyChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2.6: Recordación -->
+    <section class="feature recall">
+        <div class="feature-content">
+            <div class="text-icon">
+                <div class="text-left">
+                    <h2>Recordación</h2>
+                    <p>Un estudio de <span class="highlight">Journal of Product & Brand Management</span> encontró que los consumidores pueden identificar una marca por su <span class="highlight">logotipo el 80% de las veces,</span> incluso sin ver el nombre de la marca.</p>
+                </div>
+                <div class="icon-right">
+                    <canvas id="recallChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2.7: Fidelización -->
+    <section class="feature loyalty">
+        <div class="feature-content">
+            <div class="text-icon">
+                <div class="text-left">
+                    <h2>Fidelización</h2>
+                    <p>De acuerdo con Forbes, <span class="highlight">el 89% de los consumidores</span> son leales a las marcas que comparten sus valores y que tienen una identidad visual fuerte.</p>
+                </div>
+                <div class="icon-right">
+                    <canvas id="loyaltyChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+     <!-- Sección 3. contenido - Servicios -->
+     <div class="texto-servicio">
+        <h7>Servicios de Marketing Digital</h7>
+        <p>Estamos enfocados en brindar servicios de  marketing digital integrados que permitan ayudarte a alcanzar tus objetivos comerciales.</p>
+        </div>
+           <!-- Sección 3.1 Iconos de Servicios -->
+           <div class="icon-stats">
+            <div class="icon">
+                <a href="/servicios/crear-pagina-web">
+                    <i class="fas fa-code"></i>
+                    <p>Crear página web</p>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="/servicios/crear-logotipo">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Crear logotipo</p>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="/servicios/social-media-manager">
+                    <i class="fas fa-users"></i>
+                    <p>Social media manager</p>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="/servicios/seo">
+                    <i class="fas fa-search"></i>
+                    <p>Estrategias SEO</p>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="/servicios/sem">
+                    <i class="fas fa-ad"></i>
+                    <p>Estrategias SEM</p>
+                </a>
+            </div>
+        </div>
+    
+    <!-- Sección 3.2 contacto -->
+    <footer class="contacto">
+        <div class="contacto-container">
+          <!-- Columna 1: Logo y Derechos Reservados -->
+          <div class="columna">
+            <p>&copy; 2024 CK Digital</p>
+                <p>|Todos los derechos reservado|</p>
+          </div>
+          <!-- Columna 2: Dirección -->
+          <div class="columna">
+            <h4>Dirección</h4>
+            <p>Calle las limas 410 - Independencia, 410</p>
+            <p>Lima, Perú</p>
+          </div>
+      
+          <!-- Columna 3: Teléfono y Email -->
+          <div class="columna">
+            <h4>Contacto</h4>
+            <p>Teléfono: +51 933 838 792</p>
+            <p>Email: ckdigital@outlook.com.pe</p>
+          </div>
+      
+          <!-- Columna 4: Íconos de Redes Sociales -->
+          <div class="columna redes-sociales">
+            <h4>Síguenos</h4>
+            <a href="https://facebook.com/tuempresa" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/tuempresa" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/tuempresa" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/tuempresa" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </footer>
+    <script src="crear-logotipo.js"></script>
+</body>
+</html>

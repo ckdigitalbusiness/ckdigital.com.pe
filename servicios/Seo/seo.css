@@ -1,0 +1,851 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+.header {
+    position: fixed;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*<!-- sección 1 - encabezado pagina web-->
+ <!-- sección 1.2 contenedor de particulas-->*/
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+/* <!-- sección 1.3 Contenedor principal con parallax --> */
+.pagina.parallax {
+    position: relative;
+    background-image: url('seoimg/1.svg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajustar según la altura deseada */
+    z-index: -1;
+}
+
+/* Estilo para la imagen responsive */
+.responsive-img {
+    display: none; /* Oculta la imagen por defecto */
+}
+.parallax-container {
+    padding: 40px 0;
+}
+/* Página*/
+.pagina {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.parallax::before {
+    content: "";
+    background-image: url('seoimg/1.svg');
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+
+}
+.parallax-layer {
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* <!-- sección 1.4 Overlay -->*/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none; /* Color del overlay */
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-align: center;
+    background-color: #047a74;
+}
+/* Estilos Generales */
+.glass-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    width: 70vw;
+    height: 78.5vh;
+    color: #ffffff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+/* <!-- sección 1.5 Título encabezado --> */
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: #fcfcfc; /* Color amarillo */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30%;
+}
+
+.highlight {
+    color: #05f0d0a1;
+}
+
+
+/* 1.4.ESTILO PESTAÑAS */
+/*<!-- 1.Icono de menú de hamburguesas -->*/
+.floating-icon {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fcfcfc;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  /* <!-- 1.2 Fondo con opacidad --> */
+  .modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #047a74f3;
+    z-index: 70; /* Coloca el fondo por encima de todo */
+  }
+  /*<!-- 1.3 Menú de pestañas de servicios --> */
+  .tabs {
+    display: none;
+    position: fixed;
+    top: 95px;
+    right: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    font-size: 2em;
+  }
+  
+  .tabs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    text-align: left;
+  }
+  
+  .tabs li {
+    display: block;
+    margin-bottom: 15px; /* controla la distancia de los textos */
+  }
+  
+  .tabs a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+  }
+  
+  /* Estilo para las líneas suaves */
+  .tabs a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #cabd01; /* Color de linea decorativa */
+    transform: scaleX(0);
+    transition: transform 0.2s ease; /* Efecto de transición suave */
+  }
+  
+  /*Efecto al pasar el cursor */
+  .tabs a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .tab-active {
+    color: #01c4ca;
+  }
+  
+  /* Mostrar el fondo y el menú de servicios al hacer clic */
+  .modal-open .modal-background,
+  .modal-open .tabs {
+    display: block;
+  }
+/* Sección Servicios de SEO */
+#seo-services {
+  padding: 60px 0;
+  background-color: #f4f4f4;
+}
+
+#seo-services .section-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#seo-services h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#seo-services .highlight {
+  color: #07b5cc;
+  font-weight: 700;
+}
+
+#seo-services p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Sección Desempeño SEO */
+#seo-performance {
+  padding: 60px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+#seo-performance .section-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+#seo-performance .content-image {
+  flex: 1;
+  text-align: center;
+}
+
+#seo-performance .content-image .img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#seo-performance .content-text {
+  flex: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+#seo-performance h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#seo-performance p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+#seo-performance .highlight {
+  color: #07b5cc;
+  font-weight: 700;
+}
+
+/* Sección Ventajas SEO */
+#seo-advantages {
+  padding: 60px 0;
+  background-color: #f4f4f4;
+}
+
+#seo-advantages .section-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+#seo-advantages .content-image {
+  flex: 1;
+  text-align: center;
+}
+
+#seo-advantages .content-image .img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#seo-advantages .content-text {
+  flex: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+#seo-advantages h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#seo-advantages .no-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#seo-advantages .animated-item {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#seo-advantages .animated-item i {
+  font-size: 1.3em;
+  color: #07b5cc;
+  margin-right: 10px;
+}
+
+#seo-advantages .animated-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #07b5cc;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #seo-performance .section-content,
+  #seo-advantages .section-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  #seo-performance .content-image,
+  #seo-advantages .content-image {
+      max-width: 100%;
+      margin-bottom: 20px;
+  }
+
+  #seo-performance .content-text,
+  #seo-advantages .content-text {
+      max-width: 100%;
+  }
+}
+
+/* Contenedor para las tres secciones */
+#seo-web {
+  padding: 80px 0;
+  background-color: #07b5cc;
+  overflow: hidden; /* Oculta el contenido desbordado */
+}
+
+#seo-web .container {
+  max-width: 1700px; /* Ajusta según el tamaño deseado */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 0 15px; /* Añade padding horizontal */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+.animated-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.animated-item i {
+  font-size: 1.5em;
+  margin-right: 15px;
+  color: #4b4b4b;
+}
+
+.animated-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.animated-item strong {
+  font-weight: bold;
+}
+
+.animated-item p {
+  margin: 0;
+}
+
+#seo-web .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; /* Ajusta el espacio entre columnas */
+}
+
+#seo-web .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 15px; /* Ajusta el padding interno de las columnas */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+#seo-web .content-left,
+#seo-web .content-center,
+#seo-web .content-right {
+  width: 100%;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+#seo-web .content-left {
+  text-align: left;
+}
+
+#seo-web .content-center {
+  text-align: center;
+}
+
+#seo-web .content-right {
+  text-align: right;
+}
+
+#seo-web h3 {
+  font-size: 2rem;
+  color: #4b4b4b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#seo-web p,
+#seo-web li {
+  font-size: 1.2rem;
+  color: #d3d2d2;
+  line-height: 1.6;
+  margin: 0 0 15px 0; /* Ajusta el margen inferior */
+  text-align: justify;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  #seo-web .col-lg-4 {
+      padding: 0 15px; /* Ajusta el padding para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  #seo-web h3 {
+      font-size: 1.5rem; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+  }
+
+  #seo-web p,
+  #seo-web li {
+      font-size: 1rem; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+      margin: 0 0 15px 0; /* Ajusta el margen para pantallas más pequeñas */
+  }
+}
+
+
+/* Imagen al pie de las secciones */
+.content-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Media Queries para hacer que las secciones se dispongan en una columna en móviles y tabletas */
+@media (max-width: 991px) {
+    #seo-web .row {
+        flex-direction: column;
+    }
+
+    #seo-web .col-lg-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/*  <!-- Sección 3. contenido - Servicios -->*/
+.texto-servicio {
+  margin-top: 40px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px 0; /* Elimina el padding lateral */
+  margin: 0; /* Elimina los márgenes */
+  width: 100%; /* Asegura que ocupe el 100% del ancho */
+  box-sizing: border-box; /* Considera el padding dentro del ancho total */
+  position: relative;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+  
+  .texto-servicio h7 {
+    font-size: 2rem;
+    color: #1f1f1f;
+    margin-bottom: 15px;
+  }
+  
+  .texto-servicio p {
+    font-size: 1rem;
+    color: #757575;
+    max-width: 800px;
+    margin: 10px auto;
+  }
+  
+  /*  <!-- Sección 3.1 Iconos de Servicios --> */
+  .icon-stats {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 50px 0; /* Elimina el padding lateral */
+    margin: 0; /* Elimina los márgenes */
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+    box-sizing: border-box; /* Considera el padding dentro del ancho total */
+    gap: 15%;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  
+  
+  .icon-stats .icon {
+    text-align: center;
+    color: #747474;
+  }
+  
+  .icon-stats .icon a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .icon-stats .icon i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .icon-stats .icon p {
+    font-size: 18px;
+  }
+  
+  .icon-stats .icon:hover i {
+    transform: scale(1.2);
+  }
+  
+  /* Configuración de íconos específicos */
+  .icon-stats .fa-search {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-ad {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-users {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-paint-brush {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-code {
+    color: #747474;
+  }
+  
+  /* Animación de entrada de los iconos */
+  @keyframes fadeInIcon {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 768px) {
+    .icon-stats {
+      flex-direction: column; /* Una columna en dispositivos pequeños */
+      gap: 20px;
+    }
+  
+    .icon-stats .icon {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  /* <!-- Sección 3.2 contacto --> */
+  .contacto {
+    background-color: #121616;
+    color: rgb(172, 172, 172);
+    padding: 40px 0;
+  }
+  
+  .contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .columna {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .columna h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .columna p {
+    margin: 5px 0;
+  }
+  
+  .redes-sociales a {
+    color: #0ff8f8;
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .redes-sociales a:hover {
+    color: #f5d104;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 992px) {
+    .contacto-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .columna {
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 45%; /* Dos columnas por fila */
+      text-align: left;
+    }
+  
+    .redes-sociales {
+      flex: 1 1 100%; /* Una columna completa para las redes sociales */
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 22%; /* Cuatro columnas en una fila */
+    }
+  
+    .redes-sociales {
+      text-align: left;
+    }
+  }
+
+
+
+/* Móviles (menor o igual a 599px) */
+@media (max-width: 599px) {
+    #seo-web
+    #seo-advantages
+    #seo-performance
+    #seo-performance {
+        padding: 40px 0; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .section-content {
+        flex-direction: column; /* Apila el contenido en columna */
+        text-align: center; /* Centra el texto en móviles */
+    }
+
+    .content-left {
+        margin-right: 0; /* Elimina el margen a la derecha en móviles */
+        margin-bottom: 20px; /* Agrega espacio debajo del texto */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Reduce el tamaño del texto del título */
+    }
+
+    p {
+        font-size: 1rem; /* Reduce el tamaño del texto del párrafo */
+    }
+}
+
+/* Tabletas (600px - 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+    #seo-performance {
+        padding: 50px 0; /* Ajusta el padding para tabletas */
+    }
+
+    .section-content {
+        flex-direction: row; /* Disposición en fila para tabletas */
+    }
+
+    .content-left {
+        margin-right: 20px; /* Espacio entre el texto y la imagen */
+    }
+
+    h3 {
+        font-size: 1.8rem; /* Tamaño del texto del título */
+    }
+
+    p {
+        font-size: 1.125rem; /* Tamaño del texto del párrafo */
+    }
+}
+
+/* Laptop (900px - 1199px) */
+@media (min-width: 900px) and (max-width: 1199px) {
+    #seo-performance {
+        padding: 60px 0; /* Padding para pantallas de laptop */
+    }
+
+    .section-content {
+        flex-direction: row; /* Disposición en fila para laptops */
+    }
+
+    .content-left {
+        margin-right: 30px; /* Espacio más amplio entre el texto y la imagen */
+    }
+
+    h3 {
+        font-size: 2rem; /* Tamaño del texto del título */
+    }
+
+    p {
+        font-size: 1.25rem; /* Tamaño del texto del párrafo */
+    }
+}
+
+/* Monitores grandes (1200px y mayores) */
+@media (min-width: 1200px) {
+    #seo-performance {
+        padding: 80px 0; /* Padding para pantallas grandes */
+    }
+
+    .section-content {
+        flex-direction: row; /* Disposición en fila para monitores grandes */
+    }
+
+    .content-left {
+        margin-right: 40px; /* Espacio amplio entre el texto y la imagen */
+    }
+
+    h3 {
+        font-size: 2.2rem; /* Tamaño del texto del título */
+    }
+
+    p {
+        font-size: 1.375rem; /* Tamaño del texto del párrafo */
+    }
+}
+
+/* 4. Sección de AR */
+#ar-container-seo {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+#ar-container a {
+    color: #f5d104;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#ar-container a:hover {
+    text-decoration: underline;
+}

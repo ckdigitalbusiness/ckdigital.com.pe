@@ -1,0 +1,709 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*<!-- Sección 1.Contenedor de partículas -->*/
+/* Efecto de partículas */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.content {
+    position: relative;
+    z-index: 1; /* Asegúrate de que esté encima de las partículas */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Página */
+.pagina {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.parallax-layer {
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.parallax {
+    height: 80vh; /* Ajustar la altura según sea necesario */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInZoom 2s ease-in-out;
+    background: #6e0000; /* Color de fondo oscuro */
+}
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #fcfcfc; /* Color amarillo */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 16%;
+}
+
+.highlight-color {
+    color: #ff4081; /* Color de resalte */
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: none; /* Ocultar la imagen por defecto */
+}
+
+.servicios-carousel-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Consultas de medios para hacer el contenedor glass responsive */
+/* 1.  1.Carrusel de servicios */
+.pagina-web {
+    position: relative;
+}
+.pagina-web img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    animation: fadeInZoom 2s ease-in-out;
+}
+.pagina-web .title {
+    position: absolute;
+    top: 20px; /* Ajusta según sea necesario */
+    left: 20px; /* Ajusta según sea necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+    color: rgb(187, 187, 187); /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    font-size: 7.5em; /* Tamaño del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+}
+.icon-Estilos .Iconos i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+/* Estilo general para la clase parallax - matenido formato mobiles*/
+.pagina.parallax {
+    position: relative;
+    background-image: url('semimg/1.svg');
+    background-size: cover;
+    background-position: center;
+    height: 110vh; /* Ajustar según la altura deseada */
+}
+
+/* Estilo para la imagen responsive */
+.responsive-img {
+    display: none; /* Oculta la imagen por defecto */
+}
+
+/* Estilos específicos para el efecto parallax */
+.parallax {
+    height: 80vh; /* Ajustar la altura según sea necesario */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInZoom 2s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none; /* Color del overlay */
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-align: center;
+}
+
+.highlight {
+    font-size: 2.5rem;
+    color: #fd6500;
+}
+/* 1.4.ESTILO PESTAÑAS */
+/*<!-- 1.Icono de menú de hamburguesas -->*/
+.floating-icon {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fffb00;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  /* <!-- 1.2 Fondo con opacidad --> */
+  .modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6e0000;
+    z-index: 70; /* Coloca el fondo por encima de todo */
+  }
+  /*<!-- 1.3 Menú de pestañas de servicios --> */
+  .tabs {
+    display: none;
+    position: fixed;
+    top: 95px;
+    right: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    font-size: 2em;
+  }
+  
+  .tabs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    text-align: left;
+  }
+  
+  .tabs li {
+    display: block;
+    margin-bottom: 15px; /* controla la distancia de los textos */
+  }
+  
+  .tabs a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+  }
+  
+  /* Estilo para las líneas suaves */
+  .tabs a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #cabd01; /* Color de linea decorativa */
+    transform: scaleX(0);
+    transition: transform 0.2s ease; /* Efecto de transición suave */
+  }
+  
+  /*Efecto al pasar el cursor */
+  .tabs a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .tab-active {
+    color: #01c4ca;
+  }
+  
+  /* Mostrar el fondo y el menú de servicios al hacer clic */
+  .modal-open .modal-background,
+  .modal-open .tabs {
+    display: block;
+  }
+/* Sección 3. SEM - Estrategias SEM */
+#sem-strategies {
+    background-color: #ffffff; /* Fondo claro para contraste */
+    padding: 60px 0;
+}
+
+/* Tarjeta de sección SEM */
+.section-sem {
+    background: #fff; /* Fondo blanco para tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 30px;
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+}
+
+.section-sem:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Contenido de la sección */
+.content-left, .content-center, .content-right {
+    text-align: left; /* Alineación por defecto */
+}
+
+.content-center {
+    text-align: center;
+}
+
+.content-right {
+    text-align: right;
+}
+
+/* Títulos de sección */
+h3 {
+    font-size: 2rem; /* Tamaño del texto del título */
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: normal; /* Menos negrita para los títulos */
+}
+
+/* Párrafos de sección */
+p {
+    font-size: 1rem; /* Tamaño del texto del párrafo */
+    color: #666;
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+/* Lista horizontal */
+.horizontal-list {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    display: flex; /* Mostrar elementos en una fila */
+    justify-content: space-between; /* Distribuir elementos en el espacio disponible */
+    margin: 0; /* Eliminar margen */
+}
+
+/* Elementos de lista */
+.horizontal-list li {
+    font-size: 1rem; /* Tamaño de letra de los elementos de la lista */
+    color: #444;
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+/* Iconos en la lista */
+.horizontal-list li i {
+    color: #e00000; /* Color para iconos */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 1.5rem; /* Tamaño de icono ajustado */
+}
+
+/* Sección 3.1: Publicidad en Google Ads */
+#sem-strategies .col-lg-4:nth-of-type(1) .section-sem {
+    background: #fff; /* Fondo blanco para tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .section-sem:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left {
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left h3 {
+    font-size: 2rem; /* Tamaño del texto del título */
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: normal; /* Menos negrita para los títulos */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left p {
+    font-size: 1rem; /* Tamaño del texto del párrafo */
+    color: #666;
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left ul.horizontal-list {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    display: flex; /* Mostrar elementos en una fila */
+    justify-content: space-between; /* Distribuir elementos en el espacio disponible */
+    margin: 0; /* Eliminar margen */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left ul.horizontal-list li {
+    font-size: 1rem; /* Tamaño de letra de los elementos de la lista */
+    color: #444;
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(1) .content-left ul.horizontal-list li i {
+    color: #e00000; /* Color para iconos */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 1.5rem; /* Tamaño de icono ajustado */
+}
+
+/* Sección 3.2: Publicidad en Redes Sociales */
+#sem-strategies .col-lg-4:nth-of-type(2) .section-sem {
+    background: #fff; /* Fondo blanco para tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .section-sem:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center {
+    text-align: center; /* Alinear texto al centro */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center h3 {
+    font-size: 2rem; /* Tamaño del texto del título */
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: normal; /* Menos negrita para los títulos */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center p {
+    font-size: 1rem; /* Tamaño del texto del párrafo */
+    color: #666;
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center ul.horizontal-list {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    display: flex; /* Mostrar elementos en una fila */
+    justify-content: space-between; /* Distribuir elementos en el espacio disponible */
+    margin: 0; /* Eliminar margen */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center ul.horizontal-list li {
+    font-size: 1rem; /* Tamaño de letra de los elementos de la lista */
+    color: #444;
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(2) .content-center ul.horizontal-list li i {
+    color: #e00000; /* Color para iconos */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 1.5rem; /* Tamaño de icono ajustado */
+}
+
+/* Sección 3.3: Análisis de Competencia */
+#sem-strategies .col-lg-4:nth-of-type(3) .section-sem {
+    background: #fff; /* Fondo blanco para tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .section-sem:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right {
+    text-align: right; /* Alinear texto a la derecha */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right h3 {
+    font-size: 2rem; /* Tamaño del texto del título */
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: normal; /* Menos negrita para los títulos */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right p {
+    font-size: 1rem; /* Tamaño del texto del párrafo */
+    color: #666;
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right ul.horizontal-list {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    display: flex; /* Mostrar elementos en una fila */
+    justify-content: space-between; /* Distribuir elementos en el espacio disponible */
+    margin: 0; /* Eliminar margen */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right ul.horizontal-list li {
+    font-size: 1rem; /* Tamaño de letra de los elementos de la lista */
+    color: #444;
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+#sem-strategies .col-lg-4:nth-of-type(3) .content-right ul.horizontal-list li i {
+    color: #e00000; /* Color para iconos */
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 1.5rem; /* Tamaño de icono ajustado */
+}
+/*  <!-- Sección 3. contenido - Servicios -->*/
+.texto-servicio {
+    background-color: #ffffff;
+    padding: 40px 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .texto-servicio h7 {
+    font-size: 2rem;
+    color: #1f1f1f;
+    margin-bottom: 15px;
+  }
+  
+  .texto-servicio p {
+    font-size: 1rem;
+    color: #757575;
+    max-width: 800px;
+    margin: 10px auto;
+  }
+  
+  /*  <!-- Sección 3.1 Iconos de Servicios --> */
+  .icon-stats {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 50px 0; /* Elimina el padding lateral */
+    margin: 0; /* Elimina los márgenes */
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+    box-sizing: border-box; /* Considera el padding dentro del ancho total */
+    gap: 15%;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  
+  
+  .icon-stats .icon {
+    text-align: center;
+    color: #747474;
+  }
+  
+  .icon-stats .icon a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .icon-stats .icon i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .icon-stats .icon p {
+    font-size: 18px;
+  }
+  
+  .icon-stats .icon:hover i {
+    transform: scale(1.2);
+  }
+  
+  /* Configuración de íconos específicos */
+  .icon-stats .fa-search {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-ad {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-users {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-paint-brush {
+    color: #747474;
+  }
+  
+  .icon-stats .fa-code {
+    color: #747474;
+  }
+  
+  /* Animación de entrada de los iconos */
+  @keyframes fadeInIcon {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 768px) {
+    .icon-stats {
+      flex-direction: column; /* Una columna en dispositivos pequeños */
+      gap: 20px;
+    }
+  
+    .icon-stats .icon {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  /* <!-- Sección 3.2 contacto --> */
+  .contacto {
+    background-color: #121616;
+    color: rgb(172, 172, 172);
+    padding: 40px 0;
+  }
+  
+  .contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .columna {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .columna h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .columna p {
+    margin: 5px 0;
+  }
+  
+  .redes-sociales a {
+    color: #0ff8f8;
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .redes-sociales a:hover {
+    color: #f5d104;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 992px) {
+    .contacto-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .columna {
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 45%; /* Dos columnas por fila */
+      text-align: left;
+    }
+  
+    .redes-sociales {
+      flex: 1 1 100%; /* Una columna completa para las redes sociales */
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 22%; /* Cuatro columnas en una fila */
+    }
+  
+    .redes-sociales {
+      text-align: left;
+    }
+  }
+/* 5. Sección de AR */
+#ar-container-seo {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+#ar-container a {
+    color: #f5d104;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#ar-container a:hover {
+    text-decoration: underline;
+}

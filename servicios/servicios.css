@@ -1,0 +1,377 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+  0% {
+      opacity: 0;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+/*<!-- 1.Icono de menú de hamburguesas -->*/
+.floating-icon {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  color: #007BFF;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* <!-- 1.2 Fondo con opacidad --> */
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 32, 32, 0.966); /* Fondo con opacidad */
+  z-index: 70; /* Coloca el fondo por encima de todo */
+}
+
+/*<!-- 1.3 Menú de pestañas de servicios --> */
+.tabs {
+  display: none;
+  position: fixed;
+  top: 95px;
+  right: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-size: 2em;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.tabs li {
+  display: block;
+  margin-bottom: 15px; /* controla la distancia de los textos */
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+}
+
+/* Estilo para las líneas suaves */
+.tabs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #007BFF; /* Color de linea decorativa */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Efecto de transición suave */
+}
+
+/*1.5 Efecto al pasar el cursor */
+.tabs a:hover::after {
+  transform: scaleX(1);
+}
+
+.tab-active {
+  color: #6d0303;
+}
+
+/* Mostrar el fondo y el menú de servicios al hacer clic */
+.modal-open .modal-background,
+.modal-open .tabs {
+  display: block;
+}
+/*<!-- 2. imagen de servicios -->*/
+.servicios img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  animation: fadeInZoom 2s ease-in-out;
+}
+
+/* Adaptabilidad tablet */
+@media screen and (max-width: 1024px) {
+  .servicios img {
+      animation: fadeInZoom 2s ease-in-out;
+  }
+}
+
+/* Adaptabilidad móvil */
+@media screen and (max-width: 768px) {
+  .servicios img {
+      animation: fadeInZoom 2s ease-in-out;
+  }
+}
+
+/* Animación de aparición para los iconos */
+@keyframes fadeInIcon {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 2.BANNER PARTE SUPERIOR */
+.floating-banner-container {
+  position: fixed;
+  top: -10%; /* Inicialmente oculto */
+  transition: top 0.8s; /* Agrega una transición suave al desplazamiento */
+  /* Otros estilos del banner */
+}
+.banner {
+  position: fixed;
+  top: -20%; /* para que aparezca cuando se haga scroll */
+  width: 100%;
+  height: 100px; /* Altura fija del banner en píxeles */
+  background-color: #f8f8f8f3;
+  padding: 10px; /* Espacio de relleno para el contenido del banner */
+  transition: top 0.8s ease; /* Agrega una transición suave al desplazamiento */
+  z-index: 2; /* Asegura que el banner esté delante de las imágenes */
+  text-align: center;
+}
+
+.banner.visible {
+  top: 0; /* Hacer visible moviendo el banner hacia arriba */
+}
+/*  <!-- Sección 3. contenido - Servicios -->*/
+.texto-servicio {
+  background-color: #02336b;
+  padding: 40px 10px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto-servicio h7 {
+  font-size: 2rem;
+  color: #bebebe;
+  margin-bottom: 15px;
+}
+
+.texto-servicio p {
+  font-size: 1rem;
+  color: #9b9393;
+  max-width: 800px;
+  margin: 10px auto;
+}
+/*<!-- Sección 4. Iconos de Servicios -->*/
+.icon-stats .icon {
+  opacity: 0;
+  animation: fadeInIcon 1s ease-in-out forwards;
+}
+
+.icon-stats .icon:nth-child(1) {
+  animation-delay: 3s;
+}
+
+.icon-stats .icon:nth-child(2) {
+  animation-delay: 3.4s;
+}
+
+.icon-stats .icon:nth-child(3) {
+  animation-delay: 3.6s;
+}
+
+.icon-stats .icon:nth-child(4) {
+  animation-delay: 3.8s;
+}
+
+.icon-stats .icon:nth-child(5) {
+  animation-delay: 3.9s;
+}
+
+.icon-stats .icon:nth-child(6) {
+  animation-delay: 4s;
+}
+
+/* Efecto zoom al pasar el cursor sobre los iconos */
+.icon-stats .icon:hover i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-stats .icon i {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ICONOS */
+.icon-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.icon {
+  text-align: center;
+  margin: 20px;
+}
+
+.icon i {
+  font-size: 2em;
+  color: #007BFF; /* Cambia este color según tu preferencia */
+}
+
+.icon p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333; /* Cambia este color según tu preferencia */
+}
+  /* <!-- Sección 3.2 contacto --> */
+  .contacto {
+    background-color: #121616;
+    color: rgb(172, 172, 172);
+    padding: 40px 0;
+  }
+  
+  .contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .columna {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .columna h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .columna p {
+    margin: 5px 0;
+  }
+  
+  .redes-sociales a {
+    color: #0ff8f8;
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .redes-sociales a:hover {
+    color: #f5d104;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 992px) {
+    .contacto-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .columna {
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 45%; /* Dos columnas por fila */
+      text-align: left;
+    }
+  
+    .redes-sociales {
+      flex: 1 1 100%; /* Una columna completa para las redes sociales */
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .contacto-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .columna {
+      flex: 1 1 22%; /* Cuatro columnas en una fila */
+    }
+  
+    .redes-sociales {
+      text-align: left;
+    }
+  }
+/* Adaptabilidad tablet */
+@media screen and (max-width: 1024px) {
+  .tabs ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .tab-link {
+      padding: 15px 25px;
+      font-size: 18px;
+  }
+}
+
+/* Adaptabilidad móvil */
+@media screen and (max-width: 768px) {
+  .tabs ul {
+      display: block;
+      text-align: center;
+  }
+
+  .tab-link {
+      display: block;
+      padding: 20px 30px;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+  }
+
+  .tab-link:last-child {
+      border-bottom: none;
+  }
+}
+
+
+
+
+  

@@ -1,0 +1,428 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color:rgb(17, 0, 173);
+}
+
+.header {
+  position: fixed;
+}
+
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+  0% {
+      opacity: 0;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Debajo del glass container */
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(187, 187, 187); /* Color del texto */
+  text-align: center;
+  padding: 20px;
+  z-index: 0; /* Debajo del glass container pero sobre las partículas */
+  background: transparent;
+}
+
+/* Glass Container */
+/* Asegúrate de que el formulario esté adelante del efecto glass */
+.glass-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.726);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  width: 50vw;
+  height: 78.5vh;
+  color: #fff;
+  z-index: 1; /* Asegura que esté por encima del fondo y las partículas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+}
+/*<!-- 1.Icono de menú de hamburguesas -->*/
+.floating-icon {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  color: #01c4ca;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* <!-- 1.2 Fondo con opacidad --> */
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(99, 99, 99); /* Fondo con opacidad */
+  z-index: 70; /* Coloca el fondo por encima de todo */
+}
+/*<!-- 1.3 Menú de pestañas de servicios --> */
+.tabs {
+  display: none;
+  position: fixed;
+  top: 95px;
+  right: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-size: 2em;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.tabs li {
+  display: block;
+  margin-bottom: 15px; /* controla la distancia de los textos */
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+}
+
+/* Estilo para las líneas suaves */
+.tabs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #0cbdbd; /* Color de linea decorativa */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Efecto de transición suave */
+}
+
+/*Efecto al pasar el cursor */
+.tabs a:hover::after {
+  transform: scaleX(1);
+}
+
+.tab-active {
+  color: #01c4ca;
+}
+
+/* Mostrar el fondo y el menú de servicios al hacer clic */
+.modal-open .modal-background,
+.modal-open .tabs {
+  display: block;
+}
+/* 1.5 Sección de Formulario */
+/* Sección de Formulario */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(189, 189, 189, 0.932); /* Fondo translúcido */
+  border-radius: 10px;
+  margin: auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.form-container h1 {
+  font-size: 28px;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.form-header h2 {
+  font-size: 24px;
+  color: #747474;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.form-group label {
+  color: #ffffff; /* Color de las etiquetas */
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2); /* Fondo translúcido para los campos */
+  color: #222222; /* Color del texto en los campos */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.form-group option{
+  color: #747474;
+  background-color: #ffffff;
+}
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #01c4ca;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+  background-color: #01f2fa;
+  transform: translateY(-2px);
+}
+
+/* Código de área */
+.codigo-area-panel {
+  position: relative;
+}
+
+.codigo-area-panel input {
+  cursor: pointer;
+}
+
+.lista-paises {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+  color: #747474;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.lista-paises li:hover {
+  background-color: #eeeeee;
+  color: #000000; /* Color del texto al pasar el ratón */
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+/* 3. Sección de Iconos de Servicios */
+.icon-stats {
+  position: absolute;
+  top: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 50px 5%;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  gap: 15%;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.icon-stats .icon a {
+  text-decoration: none;
+  color: #747474;
+  align-items: center;
+}
+
+.icon-stats .icon i {
+  display: flex;
+  font-size: 48px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin-left: 60px;
+  z-index: 3;
+  text-align: center;
+  align-items: center;
+}
+/* configuración de íconos*/ 
+.icon-stats .fa-search{
+  position: relative;
+  color: #747474;
+  left: -25%;
+
+}
+.icon-stats .fa-ad{ /*SEM*/
+  position: relative;
+  color: #747474;
+  left: -25%;
+
+}
+.icon-stats .fa-users{
+  position: relative;
+  color: #747474;
+  left: -5%;
+}
+.icon-stats .fa-paint-brush{
+  position: relative;
+  color: #747474;
+  left: -15%;
+}
+.icon-stats .fa-code{
+  position: relative;
+  color: #747474;
+  left: -15%;
+}
+.icon-stats .icon p {
+  font-size: 18px;
+  z-index: 3;
+  align-items: center;
+}
+.icon-stats .icon:hover i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Personalización de secciones */
+@keyframes fadeInIcon {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Media Queries para Responsividad */
+
+/* Tablets y dispositivos pequeños */
+@media (max-width: 768px) {
+  .glass-container {
+    width: 80vw;
+    height: 70vh;
+    padding: 1rem;
+  }
+
+  .floating-icon {
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+
+  .tabs {
+    top: 80px;
+    right: 20px;
+    font-size: 1.5em;
+  }
+  .form-body {
+    flex-direction: column;
+  }
+  .icon-stats .icon {
+    flex: 2 2 calc(40% - 20px); /* Dos columnas en tabletas */
+    padding: 20px;
+  }
+  .icon-stats .fa-ad{
+    position: relative;
+    color: #747474;
+    left: -5%;
+  }
+}
+

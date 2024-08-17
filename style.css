@@ -1,0 +1,913 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100; 0,300; 0,400; 0,700; 0,900; 1,100; 1,300; 1,400; 1,700; 1.900&familia=Merriweather:ital,wght@0.300; 0,400; 0,700; 0,900; 1,300; 1,400; 1,700; 1.900&familia=Montserrat:ital,wght@0.100..900; 1.100..900&family=Nunito:ital,wght@0.200..1000; 1,200..1000&family=Open+Sans:ital,wght@0,300..800; 1.300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100.. 900&display=swap");
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  position: fixed;
+}
+.pagina {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-attachment: fixed;
+}
+/* Animación de fade-in y zoom */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 1.IMAGENES CON ESTILO CAROUSEL */
+/* Contenedor para el parallax */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de parallax */
+.parallax {
+  position: relative;
+  height: 100vh;
+}
+
+.parallax::before {
+  content: "";
+  background-image: url('images/2.svg'); /* Imágenes para fondo parallax */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Puedes ajustar la altura según sea necesario */
+}
+
+/* Imagen del carrusel */
+.servicios-carousel-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative; /* Asegura que la imagen se mantenga en el flujo del documento */
+  z-index: 2; /* Asegura que la imagen esté encima del fondo parallax */
+}
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 799px) {
+  .parallax::before {
+    background-image: url('images/2-mobile.svg'); /* Imágenes para fondo parallax */
+  }
+  
+  .servicios-carousel-img {
+      display: block; /* Muestra la imagen del carrusel para móviles */
+  }
+}
+
+@media (min-width: 800px) {
+  .servicios-carousel-img {
+      display: none; /* Oculta la imagen del carrusel en pantallas grandes */
+  }
+}
+/* 1.5 Estilos para la sección de publicidad */
+.publicidad {
+  background-color: #ffffff; /* Color de fondo suave */
+  padding: 40px 20px; /* Espaciado interno */
+  text-align: center;
+  margin-bottom: 40px; /* Espaciado con la siguiente sección */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.publicidad h7 {
+  font-size: 2rem;
+  color: #1f1f1f; /* Color de texto principal */
+  margin-bottom: 15px;
+}
+.publicidad p {
+  font-size: 1rem;
+  color: #757575; /* Color de texto secundario */
+  max-width: 800px; /* Ancho máximo del párrafo */
+  margin: 10px auto;
+}
+/*indicadores*/
+/* Sección de Estadísticas de Marketing Digital */
+.stats-container {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.904), rgb(243, 243, 243));
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: #272727;
+}
+
+.stats-container h5 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaciado entre los items */
+}
+
+.stat-item {
+  background: rgba(230, 230, 230, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-icon {
+  font-size: 2em;
+  color: #f8d303;
+  margin-bottom: 10px;
+}
+
+.stat-info .counter-number {
+  font-size: 2em;
+  color: #00ff0d;
+  margin-bottom: 10px;
+}
+
+.stat-info p {
+  color: #272727;
+}
+
+.stat-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.counter {
+  font-size: 2em;
+  color: #8f8f8f;
+}
+
+/* Fuente */
+.stats-source {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #272727;
+}
+
+.stats-source a {
+  color: #0428f5; /* Color similar al de los contadores */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.stats-source a:hover {
+  text-decoration: underline;
+}
+
+
+/* 2.BANNER PARTE SUPERIOR */
+.floating-banner-container {
+  position: fixed;
+  top: -10%; /* Inicialmente oculto */
+  transition: top 0.8s; /* Agrega una transición suave al desplazamiento */
+  /* Otros estilos del banner */
+}
+.banner {
+  position: fixed;
+  top: -20%; /* para que aparezca cuando se haga scroll */
+  width: 100%;
+  height: 100px; /* Altura fija del banner en píxeles */
+  background-color: #121616;
+  padding: 10px; /* Espacio de relleno para el contenido del banner */
+  transition: top 0.8s ease; /* Agrega una transición suave al desplazamiento */
+  z-index: 2; /* Asegura que el banner esté delante de las imágenes */
+  text-align: center;
+}
+
+.banner.visible {
+  top: 0; /* Hacer visible moviendo el banner hacia arriba */
+}
+
+/* Estilos para el contenedor del logotipo */
+/* <!-- 3.Logo parte superior -->*/
+.logo-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 20px; /* Ajusta el espacio alrededor del logo */
+  z-index: 10000; /* Asegura que el logo esté siempre encima de otros elementos */
+  background-color: transparent; /* Si quieres que el fondo del header sea transparente */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 80px; /* Ajusta el tamaño del logo según lo necesites */
+  width: auto;
+}
+
+
+.footer-container {
+  /* ck digital 2024 */
+  position: fixed;
+  bottom: 0px; /* Ajusta la distancia desde la parte inferior según lo necesites */
+  width: 100%; /* Ocupa todo el ancho de la página */
+  text-align: left; /* Centra el texto horizontalmente */
+  color: #030303; /* Cambia el color del texto según tus preferencias */
+  font-size: 14px; /* Ajusta el tamaño del texto según tus preferencias */
+  z-index: 70;
+}
+
+
+/* <!-- 4. Pestañas parte superior --> */
+/*<!-- 1.Icono de menú de hamburguesas -->*/
+.floating-icon {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  color: #01c4ca;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10001;
+}
+/* <!-- 1.2 Fondo con opacidad --> */
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(99, 99, 99); /* Fondo con opacidad */
+  z-index: 70; /* Coloca el fondo por encima de todo */
+}
+/*<!-- 1.3 Menú de pestañas de servicios --> */
+.tabs {
+  display: none;
+  position: fixed;
+  top: 95px;
+  right: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-size: 2em;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.tabs li {
+  display: block;
+  margin-bottom: 15px; /* controla la distancia de los textos */
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  position: relative; /* Para que el pseudo-elemento ::after sea relativo a este elemento */
+}
+
+/* Estilo para las líneas suaves */
+.tabs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #01c4ca; /* Color de linea decorativa */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Efecto de transición suave */
+}
+
+/*Efecto al pasar el cursor */
+.tabs a:hover::after {
+  transform: scaleX(1);
+}
+
+.tab-active {
+  color: #01c4ca;
+}
+
+/* Mostrar el fondo y el menú de servicios al hacer clic */
+.modal-open .modal-background,
+.modal-open .tabs {
+  display: block;
+}
+/* <!-- 5. Formulario --> */
+/* 5.1 ESTILO TEXTO FLOTANTE  */
+
+.floating-text {
+  position: fixed;
+  bottom: 46px; /* Coloca el texto en la parte inferior */
+  left: 7px; /* Coloca el texto en la parte izquierda */
+  height: 30px; /* Ajusta la altura según sea necesario */
+  background-color: #006c70;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1em;
+}
+
+.floating-text:hover {
+  background-color: #ff0000a7;
+}
+/* 5.2 ESTILO FORMULARIO */
+.formulario {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  height: 400px;
+  left: 7px; /* Cambiado de "right" a "left" para la parte izquierda */
+  background-color: #006c70;
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 70;
+}
+input {
+  width: 99%; /* Ensancha el panel "nombre, correo"*/
+  padding: 10px; /* agranda los ángulos en conjunto del panel nombre*/
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px; /* controla la distancia de los paneles "nombre, correo"*/
+}
+input:focus {
+  outline: none;
+  border-color: #f7f5f5; /* color de borde al hacer click al panel*/
+  color: #007bff; /* Cambia de color el texto al ingresar los datos*/
+}
+input:focus::placeholder {
+  color: #646664; /* color texto al hacer click al panel*/
+}
+input::placeholder {
+  color: #999; /* color texto del panel*/
+}
+/* 5.3 Estilo para el contenedor del logotipo del formulario */
+.logo-formulario {
+  position: absolute;
+  text-align: left; /* Centrar el contenido del contenedor */
+  margin-bottom: -5px; /* Espacio entre el logotipo del formulario y el texto "Envíanos un mensaje" */
+  top: 0px;
+}
+
+/* Estilo para la imagen del logotipo del formulario */
+.logo-formulario img {
+  max-width: 60px; /* Establecer un ancho máximo para el logotipo del formulario */
+  height: auto; /* Permitir que la altura se ajuste automáticamente */
+}
+
+/*5.4 Estilo "Envianos un mensaje" */
+h2 {
+  margin-top: 0px; /* Mueve el elemento hacia abajo */
+  color: #ffffff; /* color al texto "escribenos" */
+  text-align: left;
+  font: 1.2em sans-serif;
+}
+
+/* 5.5 Estilos específicos para el panel de teléfono */
+.telefono-group {
+  margin-left: 68px; /* Ajusta el margen izquierdo para desplazarlo hacia la derecha */
+  width: 120px; /* Mantenemos el mismo ancho */
+}
+/* 5.6 Estilos Código area-pais */
+.codigo-area-panel {
+  position: absolute; /* Cambiado de fixed a absolute */
+  width: 65px;
+  left: 20px;
+  top: calc(57.3% - 31px); /* Centra el panel verticalmente */
+  z-index: 60;
+}
+/* 5.7 Lista paises codigo-area*/
+.lista-paises {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  background-color: #ffffff; /* Color de fondo al deslizar los código de pais */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: #4b4a4a;
+  font-size: 12px;
+  width: 80px; /* para overflow */
+  height: 80px; /* para overflow */
+  border: #ffffff;
+  border-radius: 5%;
+  cursor: pointer;
+  overflow: auto; /* automático para que aparezca la barra deslizante */
+}
+/* 5.8 estilo lista de servicios  */
+/* Estilo para el contenedor del menú desplegable */
+.servicio-de-interes {
+  position: fixed;
+  display: inline-block;
+  width: 185px; /* Ajusta el ancho según tu diseño */
+  height: 25px;
+  bottom: 220px;
+  left: 28px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 5px;
+}
+/* 5.9 Casillero mensaje  */
+.Mensaje-group textarea {
+  position: fixed;
+  bottom: 145px;
+  width: 185px; /* Ancho del área de texto para que ocupe todo el ancho del contenedor */
+  height: 70px; /* Altura del área de texto */
+  border-radius: 5%; /* Bordes redondeados del área de texto */
+  resize: vertical; /* Permitir que el usuario redimensione verticalmente el área de texto */
+  outline: #fff; /* Quita el borde de enfoque */
+  margin-top: 5px;
+}
+
+.servicio-de-interes:hover {
+  background-color: #a5a3a3f6;
+}
+
+/* Estilo para el menú desplegable */
+.servicio-de-interes select {
+  width: 100%; /* ancho del desplegable de servicios */
+  height: 19px;
+  font-size: 15px;
+  border-color: #ffffff;
+  appearance: none; /* Quita el estilo predeterminado del navegador */
+  cursor: pointer;
+  background-color: transparent; /* color de fondo de panel - servicios*/
+  color: #4b4a4a;
+  outline: none; /* Quita el borde de enfoque */
+  border: none; /* Quita cualquier borde */
+  overflow: auto; /* activa de forma automática la barra desplegable */
+}
+
+/* Estilo para la flecha del menú desplegable */
+.servicio-de-interes::after {
+  content: "\25BC"; /* Unicode para una flecha hacia abajo */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #007bff; /* Color para una flecha hacia abajo */
+  text-align: center;
+}
+
+/* Estilo cuando el menú desplegable está abierto */
+.servicio-de-interes select:focus + ::after {
+  content: "\25B2"; /* Unicode para una flecha hacia arriba */
+}
+
+/* 5.9.1 Enviar  */
+button[type="submit"] {
+  position: fixed;
+  width: 190px;
+  left: 27px;
+  bottom: 100px;
+  background-color: #8f0303; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px; /* tamaño del botón enviar  */
+  border: none; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  text-align: center;
+}
+
+/* Estilo para el botón de enviar al pasar el ratón */
+button[type="submit"]:hover {
+  background-color: #087c08; /* Cambio de color de fondo al pasar el ratón */
+}
+/* Estilos para el mensaje */
+.mensaje {
+  display: none; /* Ocultar el mensaje inicialmente */
+  text-align: center; /* Centrar el texto */
+  font-size: 24px; /* Tamaño de fuente */
+  background-color: rgb(0, 1, 2); /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  margin: 50px auto; /* Margen (centrado horizontalmente) */
+  width: 50%; /* Ancho del mensaje */
+  border-radius: 10px; /* Bordes redondeados */
+}
+.oculto {
+  display: none;
+}
+
+/* 6. Chat bot */
+/* Estilos para el banner */
+#banner {
+  position: fixed;
+  bottom: 45px;
+  right: 90px;
+  padding: 6px 20px;
+  background-color: #006c70;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#banner:hover {
+  background-color: #ff0000a7;
+}
+
+/* Estilos para el chatbot */
+#chatbot-container {
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #0820f8d5;
+  border: 1px solid #ffffff37;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10002;
+  overflow: hidden; /* Ocultar el desbordamiento */
+  flex-direction: column;
+}
+
+/* Linea que divide el bot con el chat */
+#chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0820f85c;
+  border-bottom: 1px solid #ff0000;
+}
+
+#virtual-bot {
+  width: 100px;
+  margin-right: 10px;
+}
+
+/* x */
+#close-chatbot-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.chat-box {
+  width: 299px; /* Define el ancho del panel */
+  height: 200px; /* Define la altura del panel */
+  padding: 10px; /* Espaciado interno */
+  overflow-y: auto; /* Añade scroll vertical si el contenido excede la altura */
+  color: #fcfcfc;
+}
+
+/* campo de chat */
+#user-input {
+  position: absolute;
+  left: 15px;
+  width: 70%;
+  max-height: 100px; /* Altura máxima del campo de entrada */
+  min-height: 40px; /* Altura mínima del campo de entrada */
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: #8a1111;
+  resize: none; /* Evita que el usuario cambie el tamaño manualmente */
+  color: #ffffff;
+  overflow: hidden; /* Oculta las barras de desplazamiento */
+  bottom: 10px;
+}
+
+/* quita el borde negro del textarea que esta por defecto */
+#user-input:focus {
+  outline: none; /* Elimina el borde negro */
+  border: 1px solid #8a1111; /* Mantiene el mismo borde cuando está enfocado */
+}
+
+/* hilo de conversación */
+.mensaje-usuario {
+  text-align: right;
+  background-color: #0820f85c;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 0.8em;
+}
+
+.mensaje-chatbot {
+  text-align: left;
+  background-color: #0820f85c;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: #03f9e9;
+  font-size: 0.8em;
+}
+
+/* circulo enviar */
+#send-btn {
+  background-color: #0820f8fe; /* Color de fondo */
+  border: 10px; /* Sin borde */
+  border-radius: 50%; /* Botón redondo */
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Altura del botón */
+  display: flex; /* Flexbox para centrar contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  cursor: pointer; /* Cursor de puntero */
+  position: absolute; /* Posición absoluta */
+  bottom: 10px; /* Espacio desde la parte inferior */
+  right: 10px; /* Espacio desde la derecha */
+}
+
+/* icono enviar */
+#send-btn i {
+  color: #ffffff; /* Color del ícono */
+  font-size: 20px; /* Tamaño del ícono */
+}
+
+#send-btn:hover {
+  background-color: #8a1111; /* Color de fondo en hover */
+}
+
+#livechat-option {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#open-livechat-btn {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: #8f0303;
+  color: rgb(199, 199, 199);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  top: 5px;
+  right: 35px;
+}
+
+#open-livechat-btn:hover {
+  background-color: #0000ff;
+}
+/* <!-- Sección 7. contenido - Servicios -->*/
+.texto-servicio {
+  background-color: #ffffff; /* Color de fondo suave */
+  padding: 40px 10px; /* Espaciado interno */
+  text-align: center;
+  margin-bottom: 40px; /* Espaciado con la siguiente sección */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.texto-servicio h7 {
+  font-size: 2rem;
+  color: #1f1f1f; /* Color de texto principal */
+  margin-bottom: 15px;
+}
+.texto-servicio p {
+  font-size: 1rem;
+  color: #757575; /* Color de texto secundario */
+  max-width: 800px; /* Ancho máximo del párrafo */
+  margin: 10px auto;
+}
+/*<!-- Sección 7.1 Iconos de Servicios --> */
+.icon-stats {
+  position: relative;
+  top: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 50px 5%;
+  margin: 0px;
+  width: 100vw;
+  box-sizing: border-box;
+  gap: 15%;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.icon-stats .icon a {
+  text-decoration: none;
+  color: #747474;
+  align-items: center;
+}
+
+.icon-stats .icon i {
+  display: flex;
+  font-size: 48px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin-left: 60px;
+  z-index: 3;
+  text-align: center;
+  align-items: center;
+}
+/* configuración de íconos*/
+.icon-stats .fa-search {
+  position: relative;
+  color: #747474;
+  left: -25%;
+}
+.icon-stats .fa-ad {
+  /*SEM*/
+  position: relative;
+  color: #747474;
+  left: -25%;
+}
+.icon-stats .fa-users {
+  position: relative;
+  color: #747474;
+  left: -5%;
+}
+.icon-stats .fa-paint-brush {
+  position: relative;
+  color: #747474;
+  left: -15%;
+}
+.icon-stats .fa-code {
+  position: relative;
+  color: #747474;
+  left: -15%;
+}
+.icon-stats .icon p {
+  font-size: 18px;
+  z-index: 3;
+  align-items: center;
+}
+.icon-stats .icon:hover i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Personalización de secciones */
+@keyframes fadeInIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Media Queries para Responsividad */
+
+/* Tablets y dispositivos pequeños */
+@media (max-width: 768px) {
+  .glass-container {
+    width: 80vw;
+    height: 70vh;
+    padding: 1rem;
+  }
+
+  .floating-icon {
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+
+  .tabs {
+    top: 80px;
+    right: 20px;
+    font-size: 1.5em;
+  }
+  .form-body {
+    flex-direction: column;
+  }
+  .icon-stats .icon {
+    flex: 2 2 calc(40% - 20px); /* Dos columnas en tabletas */
+    padding: 20px;
+  }
+  .icon-stats .fa-ad {
+    position: relative;
+    color: #747474;
+    left: -5%;
+  }
+}
+
+/* <!-- Sección 8. contacto -->*/
+.contacto {
+  background-color: #121616; /* Color de fondo */
+  color: rgb(172, 172, 172); /* Color del texto */
+  padding: 40px 0;
+}
+
+.contacto-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se acomoden en pantallas pequeñas */
+  justify-content: space-between; /* Espacio entre columnas */
+  max-width: 80%;
+  margin: 0 auto; /* Centrar el contenedor */
+  padding: 0 20px; /* Margen interno para el contenedor */
+}
+
+.columna {
+  flex: 1; /* Cada columna ocupa el mismo espacio */
+  margin: 10px; /* Margen entre columnas */
+  min-width: 200px; /* Ancho mínimo para cada columna */
+}
+
+.columna h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
+
+.columna p {
+  margin: 5px 0;
+}
+.columna img{
+  width: 50px;
+}
+
+.redes-sociales a {
+  color: #0ff8f8;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.redes-sociales a:hover {
+  color: #f5d104; /* Color de íconos al pasar el ratón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .contacto-container {
+    flex-direction: column; /* Las columnas se apilan una encima de la otra */
+    align-items: center; /* Centrar columnas verticalmente */
+  }
+
+  .columna {
+    margin: 15px 0; /* Espacio entre columnas verticalmente */
+    text-align: center; /* Centrar el texto de cada columna */
+  }
+
+  .logo {
+    margin: 0 auto 10px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .contacto-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .columna {
+    flex: 1 1 45%; /* Dos columnas por fila */
+    text-align: left;
+  }
+
+  .redes-sociales {
+    flex: 1 1 100%; /* Una columna completa para las redes sociales */
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .contacto-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .columna {
+    flex: 1 1 22%; /* Cuatro columnas en una fila */
+  }
+
+  .redes-sociales {
+    text-align: left;
+  }
+}
