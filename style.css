@@ -44,11 +44,12 @@ body {
 .parallax {
   position: relative;
   height: 100vh;
+  overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
 .parallax::before {
   content: "";
-  background-image: url('images/3.jpg'); /* Imágenes para fondo parallax */
+  background-image: url('images/3.jpg'); /* Imagen para fondo parallax en pantallas grandes */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -58,7 +59,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  /* Puedes ajustar la altura según sea necesario */
 }
 
 /* Imagen del carrusel */
@@ -73,9 +73,9 @@ body {
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 799px) {
   .parallax::before {
-    background-image: url('images/2-mobile.svg'); /* Imágenes para fondo parallax */
+    background-image: url('images/2-mobile.svg'); /* Imagen de fondo parallax para pantallas móviles */
   }
-  
+
   .servicios-carousel-img {
       display: block; /* Asegura que la imagen del carrusel esté visible en móviles */
   }
@@ -84,9 +84,10 @@ body {
 /* Media Queries para pantallas grandes */
 @media (min-width: 800px) {
   .servicios-carousel-img {
-      display: block; /* Cambia esto a block si quieres que la imagen se muestre en pantallas grandes también */
+      display: block; /* Asegura que la imagen del carrusel esté visible en pantallas grandes también */
   }
 }
+
 
 /* 1.5 Estilos para la sección de publicidad */
 .publicidad {

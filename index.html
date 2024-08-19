@@ -15,15 +15,20 @@
  
  <!-- 1 Imágenes con efecto carrusel -->
 <!-- Sección de imágenes con efecto parallax -->
+<!-- Sección de imágenes con efecto parallax -->
 <div class="pagina">
     <div class="parallax">
         <picture>
             <!-- Imagen para pantallas pequeñas (móviles) -->
             <source srcset="images/2-mobile.svg" media="(max-width: 799px)">
-            <source srcset="images/2.svg"  media="(max-width: 799px)">
+            <!-- Imagen para pantallas grandes -->
+            <source srcset="images/3.jpg" media="(min-width: 800px)">
+            <!-- Imagen por defecto -->
+            <img src="images/3.jpg" alt="Imagen de fondo">
         </picture>
     </div>
 </div>
+
      <style>
          @media screen and (min-width: 800px) {
              .modal-content {
