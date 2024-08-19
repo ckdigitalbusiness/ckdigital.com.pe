@@ -73,7 +73,7 @@ body {
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 799px) {
   .parallax::before {
-    background-image: url('images/2-mobile.svg'); /* Imagen de fondo parallax para pantallas móviles */
+    background-image: url('images/3-mobile.jpg'); /* Imagen de fondo parallax para pantallas móviles */
   }
 
   .servicios-carousel-img {
